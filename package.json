@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --ignore-path .gitignore --write \"src/**/*.{css,scss,ts,tsx,json,md}\"",
-    "tsc": "tsc --noEmit",
+    "tsc": "tsc -b",
     "postinstall": "husky install",
     "prepare": "husky"
   },
@@ -41,7 +41,7 @@
     "**/*.{ts,tsx}": [
       "yarn format",
       "yarn lint",
-      "bash -c 'yarn tsc'"
+      "yarn tsc"
     ]
   }
 }
