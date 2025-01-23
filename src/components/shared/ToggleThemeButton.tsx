@@ -12,7 +12,7 @@ export const ToggleThemeButton = () => {
   return (
     <button
       onClick={handelToggleTheme}
-      className="w-fit rounded-lg border border-gray-300 p-3 transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
+      className="w-fit rounded-lg border border-gray-300 px-3 py-2.5 transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
       aria-label="Toggle theme mode"
     >
       {selectedTheme === "dark" ? (
