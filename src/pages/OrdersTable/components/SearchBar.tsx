@@ -14,7 +14,7 @@ export const SearchBar = ({ searchTerm, onSearchChange }: SearchBarProps) => {
         placeholder="Search orders..."
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
-        className="rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+        className="w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
       />
     </div>
   );

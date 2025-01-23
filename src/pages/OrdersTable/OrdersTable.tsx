@@ -103,13 +103,12 @@ export const OrdersTable = () => {
               Orders table
             </h1>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="flex w-full gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row-reverse sm:items-center">
+              <div className="flex justify-end gap-4">
                 <StatusFilter
                   statusFilter={statusFilter}
                   onStatusFilterChange={setStatusFilter}
                 />
-
                 <ToggleThemeButton />
               </div>
               <SearchBar
