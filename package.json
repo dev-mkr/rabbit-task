@@ -41,7 +41,7 @@
     "**/*.{ts,tsx}": [
       "yarn format",
       "yarn lint",
-      "yarn tsc"
+       "bash -c 'yarn tsc'"
     ]
   }
 }
