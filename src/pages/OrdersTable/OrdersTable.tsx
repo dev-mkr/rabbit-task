@@ -5,7 +5,7 @@ import { TableHeader } from "./components/TableHeader";
 import { TableRow } from "./components/TableRow";
 import { Order, OrderStatus } from "./ordersTable.type";
 import { ToggleThemeButton } from "@/components/shared/ToggleThemeButton";
-import { TableSkeletonLoading } from "@/components/shared/Table/TableSkeletonLoading";
+import { TableSkeletonLoading } from "@/pages/OrdersTable/components/TableSkeletonLoading";
 import { GlobalErrorBoundary } from "@/components/shared/GlobalErrorBoundary";
 
 // Sample data
@@ -103,13 +103,12 @@ export const OrdersTable = () => {
               Orders table
             </h1>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="flex w-full gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row-reverse sm:items-center">
+              <div className="flex justify-end gap-4">
                 <StatusFilter
                   statusFilter={statusFilter}
                   onStatusFilterChange={setStatusFilter}
                 />
-
                 <ToggleThemeButton />
               </div>
               <SearchBar
