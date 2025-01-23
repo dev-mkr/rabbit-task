@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Orders table
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📸 Screenshot
+<div style="display: flex;">
+  <img src="https://github.com/user-attachments/assets/f4d758ff-14ea-4810-942e-6735de881994" alt="Orders table light" style="width: 48%; margin-right: 2%;">
+  <img src="https://github.com/user-attachments/assets/372763cd-f55d-4550-acea-4a0046492bae" alt="Orders table dark" style="width: 48%;">
+</div>
 
-Currently, two official plugins are available:
+## 🚀 Project Overview
+A responsive and visually appealing webpage that displays a table of
+orders and includes functionality to filter the orders by their status.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Technology**: React.js
+- **Build Tool**: Vite
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
+- **CI/CD**: Husky & lint-staged
+- **Unit Testing**: Jest & react-testing-library
 
-## Expanding the ESLint configuration
+## ✨ Features
+- **Responsive Design**: Fully responsive layout that works on all device sizes
+- **Advanced Table Functionality**:
+  - Dynamic order filtering by status
+  - Search by customer name or ID
+  - Comprehensive error and loading states
+  - "No orders found" message for empty results
+- **Sorting Capabilities**: 
+  - Sort orders by creation date
+- **Theme Toggle**: 
+  - Light and dark mode support
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🔧 Prerequisites
+- Node.js (v20+)
+- yarn
 
-- Configure the top-level `parserOptions` property like this:
+## 📦 Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+# Clone the repository
+git clone https://github.com//dev-mkr/rabbit-task.git
+
+# Install dependencies
+yarn
+
+# Start development server
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🤝 Contributing
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Fork the **development** branch
+- Create your feature branch (git checkout -b feature/AmazingFeature)
+- Commit your changes (git commit -m 'Add some AmazingFeature')
+- Push to the branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## 📝 Commit Message Convention
+
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This provides a standardized way to document the purpose and impact of changes in the commit history.
+
+## Commit Message Format
+
+
 ```
+type: subject
+```
+
+### Types
+- **feat**: A new feature.
+- **fix**: A bug fix.
+- **docs**: Documentation-only changes.
+- **style**: Changes that do not affect the meaning of the code (e.g., formatting).
+- **refactor**: A code change that neither fixes a bug nor adds a feature.
+- **perf**: A code change that improves performance.
+- **test**: Adding missing or correcting existing tests.
+- **chore**: Changes to the build process or auxiliary tools and libraries.
+
+For more details, visit the [Conventional Commits website](https://www.conventionalcommits.org/).
+
