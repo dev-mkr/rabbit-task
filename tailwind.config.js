@@ -4,25 +4,9 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
-    extend: {
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: "1.3rem",
-          lg: "4rem",
-        },
-        screens: {
-          lg: "1300px",
-        },
-      },
-      colors: {
-        main: "rgb(var(--color-main) / <alpha-value>)",
-      },
-      textColor: {
-        primary: "rgb(var(--color-primary) / <alpha-value>)",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }
