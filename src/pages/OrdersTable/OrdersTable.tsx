@@ -5,7 +5,7 @@ import { TableHeader } from "./components/TableHeader";
 import { TableRow } from "./components/TableRow";
 import { Order, OrderStatus } from "./ordersTable.type";
 import { ToggleThemeButton } from "@/components/shared/ToggleThemeButton";
-import { TableSkeletonLoading } from "@/components/shared/Table/TableSkeletonLoading";
+import { TableSkeletonLoading } from "@/pages/OrdersTable/components/TableSkeletonLoading";
 import { GlobalErrorBoundary } from "@/components/shared/GlobalErrorBoundary";
 
 // Sample data
