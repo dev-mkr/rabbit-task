@@ -1,65 +1,25 @@
-import { useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { SearchBar } from "./components/SearchBar";
 import { StatusFilter } from "./components/StatusFilter";
 import { TableHeader } from "./components/TableHeader";
 import { TableRow } from "./components/TableRow";
-import { Order, OrderStatus } from "./ordersTable.type";
-import { ToggleThemeButton } from "@/components/shared/ToggleThemeButton";
+import { Order } from "./ordersTable.type";
+import { ToggleThemeButton } from "@/components/shared/ToggleThemeButton/ToggleThemeButton";
 import { TableSkeletonLoading } from "@/pages/OrdersTable/components/TableSkeletonLoading";
 import { GlobalErrorBoundary } from "@/components/shared/GlobalErrorBoundary";
+import { ArrowUpDown } from "lucide-react";
 
-// Sample data
-const orders: Order[] = [
-  {
-    id: 1,
-    customerName: "Alice",
-    status: OrderStatus.NEW,
-    items: ["Item A", "Item B"],
-    createdAt: "2025-01-20",
-  },
-  {
-    id: 2,
-    customerName: "Bob",
-    status: OrderStatus.PICKING,
-    items: ["Item C", "Item D"],
-    createdAt: "2025-01-21",
-  },
-  {
-    id: 3,
-    customerName: "Charlie",
-    status: OrderStatus.DELIVERING,
-    items: ["Item E", "Item F"],
-    createdAt: "2025-01-22",
-  },
-  {
-    id: 4,
-    customerName: "Diana",
-    status: OrderStatus.DELIVERED,
-    items: ["Item G", "Item H"],
-    createdAt: "2025-01-23",
-  },
-  {
-    id: 5,
-    customerName: "Eve",
-    status: OrderStatus.CANCELED,
-    items: ["Item I", "Item J"],
-    createdAt: "2025-01-24",
-  },
-  {
-    id: 5,
-    customerName: "Eve",
-    status: OrderStatus.NEW,
-    items: ["Item I", "Item J"],
-    createdAt: "2025-01-25",
-  },
-];
+interface Props {
+  orders: Order[];
+  isOrdersLoading: boolean;
+  isOrdersError: boolean;
+}
 
-// simulate loading
-const isOrdersLoading = false;
-// simulate error
-const isOrdersError = false;
-
-export const OrdersTable = () => {
+export const OrdersTable: FC<Props> = ({
+  orders,
+  isOrdersLoading,
+  isOrdersError,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
@@ -89,6 +49,10 @@ export const OrdersTable = () => {
         }),
     [searchTerm, statusFilter, sortDirection]
   );
+
+  const handelSort = () => {
+    setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"));
+  };
 
   if (isOrdersError) {
     return <GlobalErrorBoundary error="Something went wrong" />;
@@ -125,11 +89,20 @@ export const OrdersTable = () => {
               ) : (
                 <>
                   <TableHeader
-                    onSortToggle={() =>
-                      setSortDirection((prev) =>
-                        prev === "asc" ? "desc" : "asc"
-                      )
-                    }
+                    columns={[
+                      "Order ID",
+                      "Customer",
+                      "Product",
+                      "Status",
+                      <button
+                        onClick={handelSort}
+                        className="flex items-center gap-2 hover:text-gray-700 dark:hover:text-gray-300"
+                        data-testid="sort-button"
+                      >
+                        Date
+                        <ArrowUpDown className="h-4 w-4" />
+                      </button>,
+                    ]}
                   />
                   <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-800">
                     {filteredAndSortedOrders.length > 0 ? (
