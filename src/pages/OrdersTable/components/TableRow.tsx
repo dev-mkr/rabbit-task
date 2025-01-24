@@ -23,7 +23,10 @@ export const TableRow = ({ order }: TableRowProps) => {
   };
 
   return (
-    <tr className="odd:bg-white even:bg-gray-50 hover:bg-gray-100 dark:odd:bg-gray-700 dark:even:bg-gray-800 dark:hover:bg-gray-600">
+    <tr
+      className="odd:bg-white even:bg-gray-50 hover:bg-gray-100 dark:odd:bg-gray-700 dark:even:bg-gray-800 dark:hover:bg-gray-600"
+      data-testid="order-row"
+    >
       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">
         #{order.id}
       </td>

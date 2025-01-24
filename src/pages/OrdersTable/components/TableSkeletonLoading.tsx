@@ -1,6 +1,6 @@
 export const TableSkeletonLoading = () => {
   return (
-    <div className="w-full animate-pulse">
+    <div className="w-full animate-pulse" data-testid="table-skeleton">
       <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-900">
