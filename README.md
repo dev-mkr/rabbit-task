@@ -21,6 +21,8 @@ orders and includes functionality to filter the orders by their status.
 
 ## ✨ Features
 - **Responsive Design**: Fully responsive layout that works on all device sizes
+- **Unit testing 🧪**
+   - Fully tested to ensure reliability and maintainability. leverages vetest and react-testing-library
 - **Advanced Table Functionality**:
   - Dynamic order filtering by status
   - Search by customer name or ID
